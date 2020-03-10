@@ -2,6 +2,9 @@ USE ad_test;
 
 DROP TABLE IF EXISTS ads;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS joiner;
+
 
 CREATE TABLE users (
                        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
