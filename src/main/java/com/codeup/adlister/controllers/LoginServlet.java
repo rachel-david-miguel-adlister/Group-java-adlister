@@ -32,6 +32,7 @@ public class LoginServlet extends HttpServlet {
         }
 
         boolean validAttempt = Password.check(password,user.getPassword());
+        request.getSession().setAttribute("loggedIn", validAttempt);
 
         if (validAttempt) {
             request.getSession().setAttribute("user", user);
