@@ -14,6 +14,9 @@
                 <h2>${ad.title}</h2>
                 <h3>posted by ${user.username}</h3>
                 <p>${ad.description}</p>
+                <form action = "/edit" method="POST">
+                    <button name="button" class="edit button" type=submit value="${ad.id}">Edit</button>
+                </form>
             </div>
         </c:forEach>
     </div>
