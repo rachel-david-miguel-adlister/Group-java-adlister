@@ -18,6 +18,7 @@ public class MySQLUsersDao implements Users {
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
+
         }
     }
 
@@ -33,6 +34,21 @@ public class MySQLUsersDao implements Users {
             throw new RuntimeException("Error finding a user by username", e);
         }
     }
+
+    @Override
+    public User findUserByAdId(int Id){
+        String query = "SELECT * FROM users WHERE id = (SELECT user_id FROM ads WHERE id = ?)";
+
+        try{
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setInt(1,Id);
+            return extractUser(stmt.executeQuery());
+        }catch (SQLException e){
+            throw new RuntimeException("No user with that username exists",e);
+        }
+    }
+
+
 
     @Override
     public Long insert(User user) {
