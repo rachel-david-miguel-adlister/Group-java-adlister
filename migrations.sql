@@ -1,9 +1,8 @@
-USE adlister_db;
+DROP DATABASE IF EXISTS adlister_db;
+CREATE DATABASE adlister_db;
 
-DROP TABLE IF EXISTS ads;
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS categories;
-DROP TABLE IF EXISTS joiner;
+
+USE adlister_db;
 
 
 CREATE TABLE users (
@@ -24,15 +23,27 @@ CREATE TABLE ads (
                          ON DELETE CASCADE
 );
 
-CREATE TABLE categories (
-                        id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-                        category varchar(240) not null,
-                        primary key (id)
+# CREATE TABLE categories (
+#                         id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+#                         category varchar(240) not null,
+#                         FOREIGN KEY (id) REFERENCES ads(id)
+# );
+#
+# CREATE TABLE joiner (
+#                     user_id int unsigned not null,
+#                     cat_id int unsigned not null ,
+#                     foreign key (user_id) references users(id),
+#                     foreign key (cat_id) references ads(id)
+# );
+CREATE TABLE user_ads(
+                         ad_id INT UNSIGNED NOT NULL,
+                         user_id INT UNSIGNED NOT NULL,
+                         FOREIGN KEY (user_id) REFERENCES users(id),
+                         FOREIGN KEY (ad_id) REFERENCES ads(id)
 );
 
-CREATE TABLE joiner (
-                    ad_id int unsigned not null,
-                    cat_id int unsigned not null ,
-                    foreign key (ad_id) references ads(id),
-                    foreign key (cat_id) references categories(id)
+CREATE TABLE cat_ads(
+                        category VARCHAR(255) NOT NULL,
+                        ad_id INT UNSIGNED NOT NULL,
+                        FOREIGN KEY (ad_id) REFERENCES ads(id)
 );

@@ -13,9 +13,12 @@
     <h1>Here Are all the ads!</h1>
 
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
+        <div class="ads col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+            <form action = "/details" method="POST">
+                <button name="button" class="edit button" type=submit value="${ad.id}">Details</button>
+            </form>
         </div>
     </c:forEach>
 </div>
