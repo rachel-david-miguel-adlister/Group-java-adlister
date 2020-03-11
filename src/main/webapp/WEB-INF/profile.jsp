@@ -12,7 +12,6 @@
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
         <h5>${sessionScope.user.email}</h5><a href="/update-profile">edit</a>
-
     </div>
 
     <div class="container">

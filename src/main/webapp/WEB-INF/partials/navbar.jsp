@@ -14,6 +14,11 @@
                 <li><a href="login">login</a></li>
             </c:when>
                 <c:otherwise>
+
+                    <li><a href="ads/create">create</a></li>
+                    <li><a href="profile">profile</a></li>
+                    <li><a href="login">logout</a></li>
+
                     <li><a href="/ads/create">create</a></li>
                     <li><a href="/profile">profile</a></li>
                     <li><a href="/logout">logout</a></li>
@@ -21,6 +26,6 @@
             </c:choose>
 
         </ul>
-    </div><!-- /.navbar-collapse -->
+   <!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
