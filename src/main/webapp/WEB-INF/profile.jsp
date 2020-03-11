@@ -11,7 +11,6 @@
 
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1><a href="">edit</a>
-
     </div>
 
 </body>

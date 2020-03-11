@@ -15,12 +15,12 @@
             </c:when>
                 <c:otherwise>
                     <li><a href="ads/create">create</a></li>
-                    <li><a href="/profile">profile</a></li>
+                    <li><a href="profile">profile</a></li>
                     <li><a href="/login">logout</a></li>
                 </c:otherwise>
             </c:choose>
 
         </ul>
-    </div><!-- /.navbar-collapse -->
+   <!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
