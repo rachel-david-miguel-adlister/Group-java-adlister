@@ -85,5 +85,37 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public List<Ad> userAds(Long user_id) {
+        PreparedStatement stmt;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ads WHERE user_id = ?");
+            stmt.setLong(1, user_id);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving user ads.", e);
+        }
+    }
 
+//    public void deleteAd(int id) {
+//        PreparedStatement stmt = null;
+//        try {
+//            stmt = connection.prepareStatement("DELETE FROM ads WHERE id = ?");
+//            stmt.setInt(1, id);
+//            stmt.executeUpdate();
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error deleting all ads.", e);
+//        }
+//    }
+
+    public void deleteAd(int id) {
+        PreparedStatement stmt;
+        try {
+            stmt = connection.prepareStatement("DELETE FROM ads WHERE id='" +id+"'");
+            stmt.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting ad.");
+        }
+    }
 }
