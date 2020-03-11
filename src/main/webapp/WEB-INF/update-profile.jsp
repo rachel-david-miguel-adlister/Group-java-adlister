@@ -6,6 +6,7 @@
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
 </head>
+
 <body>
 <%--<form action="/update-profile" method="post">--%>
 <%--    <div>--%>
