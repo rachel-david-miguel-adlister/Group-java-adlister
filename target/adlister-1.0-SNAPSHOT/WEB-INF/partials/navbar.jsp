@@ -14,9 +14,15 @@
                 <li><a href="login">login</a></li>
             </c:when>
                 <c:otherwise>
+<<<<<<< HEAD
                     <li><a href="ads/create">create</a></li>
                     <li><a href="profile">profile</a></li>
                     <li><a href="/login">logout</a></li>
+=======
+                    <li><a href="/ads/create">create</a></li>
+                    <li><a href="/profile">profile</a></li>
+                    <li><a href="/logout">logout</a></li>
+>>>>>>> 929a2b2a96bf9039d0ade9db94438bac37483213
                 </c:otherwise>
             </c:choose>
 
