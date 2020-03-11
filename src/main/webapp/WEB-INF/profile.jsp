@@ -29,6 +29,7 @@
                     <button name="deleteButton" class="delete" type=submit value="${ad.id}">delet dis</button>
                 </form>
             </div>
+            // oops
         </c:forEach>
     </div>
 
